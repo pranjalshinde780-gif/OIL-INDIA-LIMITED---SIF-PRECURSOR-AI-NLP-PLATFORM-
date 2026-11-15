@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+
+{% block title %}Executive Overview - OIL SIF Engine{% endblock %}
+
+{% block content %}
+<div id="dashboard-root" class="space-y-6">
+
+    <!-- Hero Title Banner -->
+    <div class="glass-panel p-6 border-l-4 border-l-sky-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+            <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                HSE Executive Command & Precursor Intelligence
+            </h1>
+            <p class="text-sm text-slate-400 mt-1">
+                AI-powered analysis of safety narratives for SIF precursor detection and risk intelligence.
+            </p>
+        </div>
+
+        <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                Prototype Engine Active
+            </span>
+
+            <span class="text-xs text-slate-400 font-mono">
+                Model: Calibrated Hybrid NLP
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Prototype Evaluation Metrics -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- Training Reports -->
+        <div class="glass-panel p-5">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">
+                        Prototype Training Reports
+                    </p>
+                    <p class="text-3xl font-bold text-white mt-2">
+                        1,450
+                    </p>
+                </div>
+
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center">
+                    <i class="fa-solid fa-database text-sky-400"></i>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-3">
+                Combined training dataset
+            </p>
+        </div>
+
+
+        <!-- Real World Added -->
+        <div class="glass-panel p-5">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">
+                        Real-World Reports Added
+                    </p>
+                    <p class="text-3xl font-bold text-white mt-2">
+                        100
+                    </p>
+                </div>
+
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                    <i class="fa-solid fa-file-circle-plus text-emerald-400"></i>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-3">
+                Prototype-labelled training examples
+            </p>
+        </div>
+
+
+        <!-- Evaluation Reports -->
+        <div class="glass-panel p-5">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">
+                        Independent Evaluation
+                    </p>
+                    <p class="text-3xl font-bold text-white mt-2">
+                        50
+                    </p>
+                </div>
+
+                <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center">
+                    <i class="fa-solid fa-flask text-violet-400"></i>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-3">
+                Real-world prototype test reports
+            </p>
+        </div>
+
+
+        <!-- F1 -->
+        <div class="glass-panel p-5">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider">
+                        Prototype SIF F1 Score
+                    </p>
+                    <p class="text-3xl font-bold text-white mt-2">
+                        87.06%
+                    </p>
+                </div>
+
+                <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                    <i class="fa-solid fa-chart-simple text-amber-400"></i>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 mt-3">
+                50-report evaluation set
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Evaluation Note -->
+    <div class="glass-panel px-5 py-3 border border-amber-500/20">
+        <p class="text-xs text-slate-400">
+            <i class="fa-solid fa-circle-info text-amber-400 mr-2"></i>
+            Prototype evaluation results are based on a 50-report real-world test set with
+            prototype labels. Expert HSE validation is required for production deployment.
+        </p>
+    </div>
+
+
+    <!-- System Capabilities -->
+    <div>
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h2 class="text-lg font-bold text-white">
+                    SIF Intelligence Capabilities
+                </h2>
+                <p class="text-xs text-slate-400 mt-1">
+                    Core functions of the AI-powered safety intelligence platform
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- Capability 1 -->
+            <div class="glass-panel p-5">
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-language text-sky-400"></i>
+                </div>
+
+                <h3 class="text-sm font-bold text-white">
+                    NLP Report Triage
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    Processes free-text safety narratives and prepares them for AI analysis.
+                </p>
+            </div>
+
+
+            <!-- Capability 2 -->
+            <div class="glass-panel p-5">
+                <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+                </div>
+
+                <h3 class="text-sm font-bold text-white">
+                    SIF Precursor Detection
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    Identifies narratives indicating potential serious injury or fatality exposure.
+                </p>
+            </div>
+
+
+            <!-- Capability 3 -->
+            <div class="glass-panel p-5">
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                </div>
+
+                <h3 class="text-sm font-bold text-white">
+                    Life-Saving Rule Mapping
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    Connects detected safety scenarios with relevant IOGP Life-Saving Rules.
+                </p>
+            </div>
+
+
+            <!-- Capability 4 -->
+            <div class="glass-panel p-5">
+                <div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-magnifying-glass-chart text-violet-400"></i>
+                </div>
+
+                <h3 class="text-sm font-bold text-white">
+                    Barrier & Risk Analysis
+                </h3>
+
+                <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+                    Highlights hazardous conditions, compromised controls and risk indicators.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- AI Processing Workflow -->
+    <!-- AI Processing Workflow -->
+<div class="glass-panel p-6">
+
+    <div class="mb-6">
+        <h2 class="text-lg font-bold text-white">
+            AI Safety Intelligence Workflow
+        </h2>
+
+        <p class="text-xs text-slate-400 mt-1">
+            From raw safety narrative to explainable SIF intelligence
+        </p>
+    </div>
+
+    <!-- Desktop Workflow -->
+    <div class="hidden lg:flex items-center gap-3">
+
+        <!-- Step 1 -->
+        <div class="flex-1 h-32 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center px-3">
+            <i class="fa-solid fa-file-lines text-sky-400 text-2xl mb-3"></i>
+            <p class="text-sm font-semibold text-white">
+                Safety Report
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+                Raw narrative
+            </p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right text-slate-600"></i>
+
+        <!-- Step 2 -->
+        <div class="flex-1 h-32 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center px-3">
+            <i class="fa-solid fa-brain text-violet-400 text-2xl mb-3"></i>
+            <p class="text-sm font-semibold text-white">
+                NLP Processing
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+                Clean & extract
+            </p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right text-slate-600"></i>
+
+        <!-- Step 3 -->
+        <div class="flex-1 h-32 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center px-3">
+            <i class="fa-solid fa-triangle-exclamation text-red-400 text-2xl mb-3"></i>
+            <p class="text-sm font-semibold text-white">
+                SIF Classification
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+                SIF / Non-SIF
+            </p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right text-slate-600"></i>
+
+        <!-- Step 4 -->
+        <div class="flex-1 h-32 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center px-3">
+            <i class="fa-solid fa-shield-halved text-emerald-400 text-2xl mb-3"></i>
+            <p class="text-sm font-semibold text-white">
+                Hazard & Barrier
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+                Critical controls
+            </p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right text-slate-600"></i>
+
+        <!-- Step 5 -->
+        <div class="flex-1 h-32 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center px-3">
+            <i class="fa-solid fa-chart-line text-amber-400 text-2xl mb-3"></i>
+            <p class="text-sm font-semibold text-white">
+                Risk Intelligence
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+                Risk prioritization
+            </p>
+        </div>
+
+        <i class="fa-solid fa-arrow-right text-slate-600"></i>
+
+        <!-- Step 6 -->
+        <div class="flex-1 h-32 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center px-3">
+            <i class="fa-solid fa-lightbulb text-cyan-400 text-2xl mb-3"></i>
+            <p class="text-sm font-semibold text-white">
+                Explainable Result
+            </p>
+            <p class="text-xs text-slate-500 mt-1">
+                Actionable insight
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Tablet / Mobile Workflow -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:hidden gap-3">
+
+        <div class="h-28 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center">
+            <i class="fa-solid fa-file-lines text-sky-400 text-xl mb-2"></i>
+            <p class="text-sm font-semibold text-white">Safety Report</p>
+        </div>
+
+        <div class="h-28 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center">
+            <i class="fa-solid fa-brain text-violet-400 text-xl mb-2"></i>
+            <p class="text-sm font-semibold text-white">NLP Processing</p>
+        </div>
+
+        <div class="h-28 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center">
+            <i class="fa-solid fa-triangle-exclamation text-red-400 text-xl mb-2"></i>
+            <p class="text-sm font-semibold text-white">SIF Classification</p>
+        </div>
+
+        <div class="h-28 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center">
+            <i class="fa-solid fa-shield-halved text-emerald-400 text-xl mb-2"></i>
+            <p class="text-sm font-semibold text-white">Hazard & Barrier</p>
+        </div>
+
+        <div class="h-28 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center">
+            <i class="fa-solid fa-chart-line text-amber-400 text-xl mb-2"></i>
+            <p class="text-sm font-semibold text-white">Risk Intelligence</p>
+        </div>
+
+        <div class="h-28 rounded-lg bg-slate-800/40 border border-slate-700
+                    flex flex-col items-center justify-center text-center">
+            <i class="fa-solid fa-lightbulb text-cyan-400 text-xl mb-2"></i>
+            <p class="text-sm font-semibold text-white">Explainable Result</p>
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+        

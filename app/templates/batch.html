@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}Batch Ingestion & File Processing - OIL SIF Engine{% endblock %}
+
+{% block content %}
+<div id="batch-root" class="space-y-6">
+
+    <!-- Header Banner -->
+    <div class="glass-panel p-6 border-l-4 border-l-sky-500 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+            <h1 class="text-2xl font-bold tracking-tight text-white flex items-center gap-2">
+                Batch Incident Ingestion & High-Volume Triage
+            </h1>
+            <p class="text-sm text-slate-400 mt-1">
+                Upload safety observation logs (CSV / Excel) from field ERP or manual logs for automated high-throughput SIF screening.
+            </p>
+        </div>
+        <div class="flex items-center gap-2">
+            <a href="/data/oil_safety_reports.csv" download class="text-xs px-3 py-1.5 rounded bg-slate-800 text-sky-400 hover:bg-slate-700 border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-file-csv"></i> Download OIL Sample Dataset
+            </a>
+        </div>
+    </div>
+
+    <!-- Drag and Drop Upload Card -->
+    <div class="glass-panel p-8 text-center border-2 border-dashed border-slate-700 hover:border-sky-500/80 transition cursor-pointer" id="batch-drop-zone">
+        <input type="file" id="batch-file-input" class="hidden" accept=".csv, .xlsx, .xls">
+        <div class="w-14 h-14 rounded-full bg-sky-500/10 text-sky-400 flex items-center justify-center mx-auto mb-3 text-2xl">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+        </div>
+        <h3 class="text-base font-bold text-white mb-1">Drag and drop field safety logs here</h3>
+        <p class="text-xs text-slate-400 mb-3">Supports .CSV, .XLSX, and .XLS containing observation or near-miss descriptions</p>
+        <button type="button" class="px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs transition inline-flex items-center gap-2">
+            <i class="fa-solid fa-folder-open"></i> Browse Files on Computer
+        </button>
+    </div>
+
+    <!-- Processing Loader -->
+    <div id="batch-loader" class="hidden glass-panel p-8 text-center">
+        <div class="inline-block animate-spin text-sky-400 text-3xl mb-3">
+            <i class="fa-solid fa-circle-notch"></i>
+        </div>
+        <p class="text-sm text-slate-300 font-medium">Batch processing in progress... Ingesting reports and computing SIF probabilities...</p>
+    </div>
+
+    <!-- Batch Summary Stats Cards -->
+    <div id="batch-stats-container" class="hidden grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="glass-panel p-5">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Total Records Ingested</div>
+            <div class="mt-2 text-2xl font-black text-white font-mono" id="batch-total">0</div>
+        </div>
+        <div class="glass-panel p-5 border-l-2 border-l-rose-500">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">SIF Precursors Detected</div>
+            <div class="mt-2 text-2xl font-black text-rose-400 font-mono" id="batch-sif-count">0</div>
+        </div>
+        <div class="glass-panel p-5">
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Batch SIF Density Rate</div>
+            <div class="mt-2 text-2xl font-black text-amber-300 font-mono" id="batch-density">0%</div>
+        </div>
+    </div>
+
+    <!-- Batch Enriched Table -->
+    <div id="batch-table-container" class="hidden glass-panel p-6">
+        <div class="flex items-center justify-between mb-4">
+            <div>
+                <h2 class="text-sm font-bold text-white flex items-center gap-2">
+                    <i class="fa-solid fa-table-list text-sky-400"></i> Enriched Observation Triage Preview
+                </h2>
+                <p class="text-xs text-slate-400 mt-0.5">Showing classified records tagged with IOGP Life-Saving Rules and fatal potential indicators</p>
+            </div>
+            <button onclick="window.location.href='/api/export-sif'" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition flex items-center gap-1.5">
+                <i class="fa-solid fa-file-excel"></i> Download Enriched Results
+            </button>
+        </div>
+
+        <div class="overflow-x-auto rounded border border-slate-800">
+            <table class="w-full text-left border-collapse text-xs">
+                <thead class="bg-slate-900/90 text-slate-400 uppercase font-mono border-b border-slate-800">
+                    <tr>
+                        <th class="px-4 py-2.5">Row</th>
+                        <th class="px-4 py-2.5">Incident Description</th>
+                        <th class="px-4 py-2.5">SIF Verdict</th>
+                        <th class="px-4 py-2.5">IOGP Life-Saving Rule</th>
+                        <th class="px-4 py-2.5 text-right">Probability</th>
+                    </tr>
+                </thead>
+                <tbody id="batch-table-body" class="divide-y divide-slate-800/60 font-sans">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

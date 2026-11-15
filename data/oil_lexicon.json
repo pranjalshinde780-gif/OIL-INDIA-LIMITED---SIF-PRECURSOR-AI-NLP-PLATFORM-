@@ -1,0 +1,114 @@
+{
+  "acronyms": {
+    "bop": "blowout preventer high pressure well control",
+    "loto": "lockout tagout energy isolation",
+    "ptw": "permit to work safety authorization",
+    "scba": "self contained breathing apparatus toxic gas protection",
+    "h2s": "hydrogen sulfide lethal toxic sour gas",
+    "lel": "lower explosive limit flammable gas concentration",
+    "ocs": "oil collecting station production facility",
+    "ggs": "gas gathering station pressurized gas plant",
+    "cpf": "central processing facility",
+    "oim": "offshore offshore installation manager rig in-charge",
+    "ppe": "personal protective equipment",
+    "fme": "foreign material exclusion",
+    "jsea": "job safety and environmental analysis risk assessment",
+    "jha": "job hazard analysis",
+    "swl": "safe working load lifting capacity",
+    "flb": "fail-safe lock brake",
+    "esdv": "emergency shutdown valve",
+    "psv": "pressure safety valve relief valve",
+    "whp": "wellhead pressure",
+    "csb": "chemical safety board",
+    "oisd": "oil industry safety directorate standard",
+    "iogp": "international association of oil and gas producers",
+    "pfd": "personal flotation device",
+    "mvt": "motor vehicle transport",
+    "dg": "diesel generator high voltage power unit",
+    "ct": "coiled tubing high pressure intervention",
+    "whip check": "hose whip check safety cable restraint",
+    "tag line": "crane load guidance safety tag line"
+  },
+  "iogp_rules": {
+    "Bypassing Safety Controls": {
+      "keywords": ["bypass", "interlock", "overrode", "disabled", "bridged", "safety switch", "trip bypassed", "tampered", "alarm muted", "esdv inhibited", "safety guard removed"],
+      "description": "Obtain authorization before overriding or disabling safety controls or critical alarms."
+    },
+    "Confined Space": {
+      "keywords": ["confined space", "tank entry", "mud tank", "separator vessel", "manhole", "inside column", "sump", "oxygen deficient", "atmospheric test", "standby person", "internal cleaning"],
+      "description": "Obtain authorization before entering a confined space; verify atmospheric gas test and standby watch."
+    },
+    "Driving": {
+      "keywords": ["seatbelt", "speeding", "rollover", "driver distraction", "heavy vehicle", "truck", "tanker trailer", "crane transit", "fatigue", "journey management", "oilfield road"],
+      "description": "Follow safe driving rules: wear seatbelts, obey speed limits, do not use mobile phones, rest properly."
+    },
+    "Energy Isolation": {
+      "keywords": ["loto", "lockout", "tagout", "isolation", "blind flange", "residual pressure", "live circuit", "energized", "depressurize", "breaker unlocked", "valve passing"],
+      "description": "Verify isolation and zero energy state before work begins on energized, pressurized, or electrical systems."
+    },
+    "Hot Work": {
+      "keywords": ["hot work", "welding", "cutting torch", "grinding sparks", "flammable atmosphere", "gas test", "fire watch", "spark arrestor", "hydrocarbon area", "habitat"],
+      "description": "Control flammables and ignition sources. Obtain permit and continuous gas monitoring in hazardous zones."
+    },
+    "Line of Fire": {
+      "keywords": ["line of fire", "pinch point", "crushing", "struck by", "pressurized line", "high pressure hose", "whip check", "rotating equipment", "iron roughneck", "cathead", "rotary table"],
+      "description": "Keep yourself and others out of the line of fire of moving equipment, suspended loads, and pressurized systems."
+    },
+    "Safe Mechanical Lifting": {
+      "keywords": ["crane", "lifting", "rigging", "hoisting", "suspended load", "sling damaged", "shackle", "drop zone", "banksman", "tag line", "overload", "winch wire"],
+      "description": "Plan lifting operations and control the area. Never walk or position yourself under a suspended load."
+    },
+    "Toxic Gas & Hazardous Atmosphere": {
+      "keywords": ["h2s", "toxic gas", "sour gas", "gas leak", "hydrocarbon leak", "scba", "gas detector", "benzene", "mercaptan", "sulfur dioxide", "plume", "breathing apparatus"],
+      "description": "Wear personal gas detector, know escape routes, carry SCBA in designated sour gas and hazardous zones."
+    },
+    "Working at Height": {
+      "keywords": ["working at height", "derrick", "monkey board", "harness", "lanyard", "fall arrest", "scaffolding", "green tag", "toe board", "man basket", "100% tie off", "open grating"],
+      "description": "Protect yourself against falling when working at height (above 1.8m). Inspect scaffolding and tie off 100%."
+    },
+    "Work Authorization & Permit to Work": {
+      "keywords": ["permit to work", "ptw", "authorization", "unauthorized work", "jha missing", "risk assessment", "expired permit", "toolbox talk", "toolbox meeting"],
+      "description": "Work with a valid permit when required; understand scope and critical controls before commencing."
+    }
+  },
+  "high_energy_hazards": {
+    "gravitational": {
+      "indicators": ["height", "elevation", "derrick", "monkey board", "mast", "ladder", "scaffold", "suspended load", "falling object", "dropped object", "crane hook"],
+      "threshold_hint": "> 1.8 meters or heavy dropped load"
+    },
+    "high_pressure": {
+      "indicators": ["psi", "bar", "high pressure", "hydrotest", "blowout", "bop", "choke manifold", "mud pump", "discharge line", "coiled tubing", "flange leak"],
+      "threshold_hint": "> 100 psi or hydraulic line"
+    },
+    "toxic_chemical": {
+      "indicators": ["h2s", "sour gas", "hydrocarbon gas", "crude spray", "condensate", "acidizing", "caustic", "benzene", "flammable vapor"],
+      "threshold_hint": "Lethal concentration or asphyxiation risk"
+    },
+    "electrical": {
+      "indicators": ["high voltage", "440v", "11kv", "33kv", "transformer", "switchgear", "substation", "bare wire", "arc flash"],
+      "threshold_hint": "> 50V AC / Industrial switchgear"
+    },
+    "mechanical_kinetic": {
+      "indicators": ["rotary table", "top drive", "drawworks", "cathead", "conveyor", "heavy vehicle", "mud agitator", "compressor flywheel"],
+      "threshold_hint": "Unguarded rotating equipment or moving industrial plant"
+    }
+  },
+  "barrier_indicators": {
+    "compromised": ["missing", "bypassed", "absent", "not worn", "not attached", "failed", "broken", "cracked", "corroded", "disconnected", "without", "unhooked", "unlatched", "overridden", "damaged", "no permit", "unisolated", "untested"],
+    "intact": ["arrested by", "stopped by", "prevented by", "held by", "safely isolated", "interlock triggered", "tripped automatically", "contained by", "mitigated by", "alarm functioned"]
+  },
+  "oil_sites": [
+    {"id": "OIL-RIG-01", "name": "Duliajan Rig #01", "type": "Drilling Rig", "basin": "Assam-Arakan", "lat": 27.3589, "lng": 95.3195},
+    {"id": "OIL-RIG-04", "name": "Naharkatiya Rig #04", "type": "Drilling Rig", "basin": "Assam-Arakan", "lat": 27.2917, "lng": 95.3340},
+    {"id": "OIL-RIG-07", "name": "Moran Deep Rig #07", "type": "Drilling Rig", "basin": "Assam-Arakan", "lat": 27.1852, "lng": 94.9312},
+    {"id": "OIL-RIG-12", "name": "Jaisalmer Gas Rig #12", "type": "Drilling Rig", "basin": "Rajasthan Basin", "lat": 26.9157, "lng": 70.9083},
+    {"id": "OIL-OCS-02", "name": "Moran Oil Collecting Station #2", "type": "Production OCS", "basin": "Assam-Arakan", "lat": 27.1950, "lng": 94.9450},
+    {"id": "OIL-OCS-05", "name": "Naharkatiya OCS #5", "type": "Production OCS", "basin": "Assam-Arakan", "lat": 27.3020, "lng": 95.3400},
+    {"id": "OIL-GGS-01", "name": "Duliajan Gas Gathering Station #1", "type": "Gas GGS", "basin": "Assam-Arakan", "lat": 27.3650, "lng": 95.3280},
+    {"id": "OIL-CPF-03", "name": "Digboi Central Processing Facility", "type": "Processing Plant", "basin": "Assam-Arakan", "lat": 27.3800, "lng": 95.6200},
+    {"id": "OIL-PL-PS01", "name": "Naharkatiya Pump Station 01 (Pipeline)", "type": "Crude Pipeline PS", "basin": "Assam-Arakan", "lat": 27.2850, "lng": 95.3200},
+    {"id": "OIL-PL-PS07", "name": "Sekoni Pump Station 07 (Pipeline)", "type": "Crude Pipeline PS", "basin": "Assam-Arakan", "lat": 26.5400, "lng": 93.0500},
+    {"id": "OIL-WO-03", "name": "Jorhat Workover Unit #03", "type": "Workover Unit", "basin": "Assam-Arakan", "lat": 26.7509, "lng": 94.2037},
+    {"id": "OIL-DND-01", "name": "Dandewala Gas Field Facility", "type": "Gas Production", "basin": "Rajasthan Basin", "lat": 27.1500, "lng": 70.4500}
+  ]
+}

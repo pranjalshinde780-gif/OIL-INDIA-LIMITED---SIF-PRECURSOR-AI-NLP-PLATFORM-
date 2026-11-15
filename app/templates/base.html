@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}OIL SIF Precursor Engine - Oil India Limited{% endblock %}</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        oil: {
+                            50: '#f0f9ff',
+                            500: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    
+    <!-- Leaflet.js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+
+    <!-- Top Navigation Bar -->
+    <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-sky-500 to-blue-700 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-sky-500/20">
+                    <i class="fa-solid fa-oil-well"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight text-white flex items-center gap-2">
+                        OIL INDIA LIMITED
+                        <span class="text-[10px] px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-400 font-mono border border-sky-500/30">SIH26165</span>
+                    </span>
+                    <span class="text-xs text-slate-400 block -mt-1">SIF Precursor AI & NLP Intelligence Platform</span>
+                </div>
+            </div>
+
+            <!-- Nav Links -->
+            <nav class="flex items-center gap-2">
+                <a href="/" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 border border-transparent transition flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie"></i> Executive Overview
+                </a>
+                <a href="/triage" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 border border-transparent transition flex items-center gap-2">
+                    <i class="fa-solid fa-microchip"></i> Live Triage & XAI
+                </a>
+                <a href="/batch" class="nav-link px-3 py-1.5 rounded-md text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800 border border-transparent transition flex items-center gap-2">
+                    <i class="fa-solid fa-file-arrow-up"></i> Batch Ingestion
+                </a>
+            </nav>
+
+            <!-- Export / Quick Action -->
+            <div class="flex items-center gap-3">
+                <a href="/api/export-sif" class="px-3 py-1.5 rounded-md text-xs font-semibold bg-rose-600/20 text-rose-300 border border-rose-500/40 hover:bg-rose-600/30 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-download"></i> Export SIF Alerts
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-900/60 py-4 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>Oil India Limited &bull; Smart India Hackathon (SIH26165) AI/NLP HSE System</span>
+            <span class="flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-emerald-400"></i> Zero Fatalities Objective &bull; OISD & IOGP Life-Saving Rules
+            </span>
+        </div>
+    </footer>
+
+    <!-- App JavaScript -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
